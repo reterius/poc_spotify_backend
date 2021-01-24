@@ -1,0 +1,36 @@
+version: '2'
+
+networks:
+  eks:
+    driver: bridge
+
+services:
+  rest_api:
+    image: 'bitnami/laravel'
+    container_name: rest_api
+    hostname: rest_api
+    tty: true
+    command: 'sh -c ''composer install 
+    &&php artisan key:generate
+    && php artisan migrate
+    && php artisan db:seed
+    && php artisan passport:install
+    && php artisan serve --host=0.0.0.0 --port=8000'''
+    # export APP_CONFIG=config/prod.conf prod konfig dosyanız yukarıya
+    ports:
+      - '8000:8000'
+    volumes:
+      - '.:/source/poc_spotify_backend'
+    working_dir: '/source/poc_spotify_backend'
+    networks:
+      eks:
+        aliases:
+          - rest_api
+    labels:
+      eks.api: EKS PHP
+    restart: always
+
+
+# docker stop $(docker ps -a -q)
+# docker system prune --volumes -a -f
+# docker-compose up -d
