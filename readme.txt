@@ -1,8 +1,3 @@
-
-Components needed for installation: 
-1)Docker version 19.03.8 
-2)Docker-compose version 1.25.4 
-
 Installation:
 1) git clone https://github.com/reterius/poc_spotify_backend.git
 2) cd poc_spotify_backend
