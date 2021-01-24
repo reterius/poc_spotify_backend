@@ -10,8 +10,9 @@ services:
     container_name: rest_api
     hostname: rest_api
     tty: true
-    command: 'sh -c ''composer install 
-    &&php artisan key:generate
+    command: 'sh -c ''sudo chown -R root:root storage
+    && sudo composer install 
+    && php artisan key:generate
     && php artisan migrate
     && php artisan db:seed
     && php artisan passport:install
