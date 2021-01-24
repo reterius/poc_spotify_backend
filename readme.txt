@@ -6,20 +6,22 @@ Components needed for installation:
 Installation:
 1) git clone https://github.com/reterius/poc_spotify_backend.git
 2) cd poc_spotify_backend
-3) docker-compose up -d
-4) It will be available http://127.0.0.1:8000
+3) composer install 
+4) php artisan key:generate
+5) php artisan migrate
+6) php artisan db:seed
+7) php artisan passport:install
+8) php artisan serve
+9) It will be available http://127.0.0.1:8000
 
 TEST:
-tests are in this folder:  tests/Feature/AuthenticationTest.php
-
-To run tests:
-1) you have to go inside the container via: docker exec rest_api /bin/bash
-2) We must use the test database for tests. 
+tests are in this folder:  tests/Feature/
+1) We must use the test database for tests. 
 In config/database.php file 
 find  'database' => env('DB_DATABASE', database_path('rest-api.sqlite')),
 replace with  'database' => env('DB_DATABASE', database_path('rest-api-test.sqlite')) 
 3 cd /source/poc_spotify_backend
-3) Run this command: vendor/bin/phpunit komutunu 
+2) Run this command: vendor/bin/phpunit komutunu 
 
 
 Additional details:
