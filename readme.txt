@@ -1,4 +1,15 @@
 Installation:
+
+WAY 1: Instalment via docker:
+1) git clone https://github.com/reterius/poc_spotify_backend.git
+2) cd poc_spotify_backend
+3) docker-compose build
+4) docker-compose up -d
+9) It will be available http://127.0.0.1:8000
+
+
+
+WAY 1: Instalment via manuel:
 1) git clone https://github.com/reterius/poc_spotify_backend.git
 2) cd poc_spotify_backend
 3) composer install 
