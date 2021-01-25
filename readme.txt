@@ -9,7 +9,7 @@ WAY 1: Instalment via docker:
 
 
 
-WAY 1: Instalment via manuel:
+WAY 2: Instalment via manuel:
 1) git clone https://github.com/reterius/poc_spotify_backend.git
 2) cd poc_spotify_backend
 3) composer install 
